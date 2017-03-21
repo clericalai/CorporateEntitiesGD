@@ -1,29 +1,28 @@
 ---
 metadata:
-  title: I am the title of the application
-  short title: Mobile title
+  title: Corporation Questions
+  short title: Corp
   description: |
-    Insert description of question file here.
+    Corporation Structure Questions
   authors:
-    - name: System Administrator
-      organization: 
+    - name: Nathan Roach
+      organization: GoodDocs.IO
   revision_date: 2017-03-21
 ---
 mandatory: True
-code: |
-  user_done
----
+generic object: Company
 question: |
-  % if user_doing_well:
-  Good to hear it!
-  % else:
-  Sorry to hear that!
-  % endif
-sets: user_done
-buttons:
-  - Exit: exit
-  - Restart: restart
+  In what state was the Company's organizing document filed?
+subquestion: |
+  An organizing document is usually a Charter, Certificate of Formation, or similar filing with a Secretary of State or Division of Corporations.
+fields:
+  - no label: x.formation_state
+    datatype: checkboxes
+    code: |
+      us.states.mapping('abbr', 'name')
 ---
-question: Are you doing well today?
-yesno: user_doing_well
-...
+generic object: Company
+question: |
+  What is the organizational structure of the Company?
+fields:
+  - structure: x.structure
