@@ -1,0 +1,29 @@
+---
+metadata:
+  title: I am the title of the application
+  short title: Mobile title
+  description: |
+    Insert description of question file here.
+  authors:
+    - name: System Administrator
+      organization: 
+  revision_date: 2017-03-21
+---
+mandatory: True
+code: |
+  user_done
+---
+question: |
+  % if user_doing_well:
+  Good to hear it!
+  % else:
+  Sorry to hear that!
+  % endif
+sets: user_done
+buttons:
+  - Exit: exit
+  - Restart: restart
+---
+question: Are you doing well today?
+yesno: user_doing_well
+...
